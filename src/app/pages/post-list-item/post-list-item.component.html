@@ -5,12 +5,19 @@
         <div class="col-md-8">
             <h2>{{ postTitle }}</h2>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">
             <i>{{ postCreatedAt | date: 'MM/dd/y, hh:mm a' }}</i>
         </div>
     </div>
     <p>{{ postContent }}</p>
-    <button class="btn btn-success" (click)="onLoveIt()">Love it !</button>&nbsp;
-    <button class="btn btn-danger" (click)="onDontLoveIt()">Don't love it !</button>
-    ({{ postLoveIts }})
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn btn-success" (click)="onLoveIt(singlePost)">Love it !</button>&nbsp;
+            <button class="btn btn-danger" (click)="onDontLoveIt(singlePost)">Don't love it !</button>
+            ({{ postLoveIts }})
+        </div>
+        <div class="col-md-3 col-md-offset-3">
+            <button class="btn btn-danger" (click)="onRemovePost(singlePost)">Supprimer</button>
+        </div>        
+    </div>
 </li>
